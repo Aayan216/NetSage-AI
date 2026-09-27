@@ -11,8 +11,7 @@ symptom plus real device evidence produces a structured, evidence-backed
 diagnosis — and a human always makes the final call.
 
 **Status:** 30-case dataset complete · AI diagnosis + human review complete ·
-21/30 cases hold real Packet Tracer evidence, 9 await capture (see
-[Honest status](#honest-status)).
+21/30 cases hold real Packet Tracer evidence.
 
 ## Workflow
 
