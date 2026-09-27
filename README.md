@@ -11,7 +11,8 @@ symptom plus real device evidence produces a structured, evidence-backed
 diagnosis — and a human always makes the final call.
 
 **Status:** 30-case dataset complete · AI diagnosis + human review complete ·
-live Packet Tracer evidence capture still pending (see [Honest status](#honest-status)).
+21/30 cases hold real Packet Tracer evidence, 9 await capture (see
+[Honest status](#honest-status)).
 
 ## Workflow
 
@@ -29,6 +30,7 @@ NETSAGE_AI/
 ├── data/         cases.csv, evidence_capture.csv, ai_diagnoses.csv,
 │                 rule_checker_results*.csv
 ├── prompts/      diagnose_prompt.md (structured-JSON prompt), helper_prompts.md
+├── proof/        21 captured Packet Tracer screenshots cited by evidence_capture.csv
 ├── scripts/      NetSage_rule_checker_FIXED.py, run_diagnosis.py,
 │                 validation fixtures, reference_builders/
 ├── dashboard/    NetSage_Dashboard.html + .xlsx
@@ -92,11 +94,18 @@ auditable. The dashboard in `NETSAGE_AI/dashboard/` summarizes the same numbers.
 
 ## Honest status
 
-- All 30 rows in `data/evidence_capture.csv` are `PENDING_ACTUAL_CAPTURE`:
-  the `.pkt` labs must be opened in Cisco Packet Tracer, the listed commands
-  run, and their output pasted in verbatim. No output has been invented.
-- Consequently `rule_checker_results.csv` reports 0 flags on real cases —
-  the checker only flags evidence it is actually given.
+- 21 of 30 rows in `data/evidence_capture.csv` are `CAPTURED`: their
+  `actual_show_output` is transcribed verbatim from a real Packet Tracer
+  screenshot stored in `NETSAGE_AI/proof/` (one image per captured row,
+  21 files ≈ 0.4 MB). No output has been invented.
+- The remaining 9 rows (NET-004, 007, 008, 014, 015, 019, 025, 027, 029) are
+  `PENDING_ACTUAL_CAPTURE`: their `notes` describe what the proof set does and
+  does not contain and which command output is still needed. Those `.pkt` labs
+  must be opened in Cisco Packet Tracer, the listed commands run, and their
+  output pasted in verbatim to activate the row.
+- Consequently `rule_checker_results.csv` reports evidence for 21/30 cases and
+  deterministic flags on 2 of them (NET-016, NET-017 → `missing_route`) — the
+  checker only flags evidence it is actually given.
 - The diagnosis records are a reproducible evaluation dataset built from the
   documented case faults and review decisions, not live external-model API logs.
 
