@@ -1,31 +1,395 @@
 case_id,category,title,required_commands,expected_fault,osi_layer,concept,severity,packet_file,actual_show_output,evidence_source,evidence_status,notes
-NET-001,VLAN,VLAN Configuration Issue,show vlan brief; show interfaces switchport; ping,VLAN configuration is incorrect,Layer 2,vlan-configuration,High,NET-001_VLAN_Configuration_Issue(1).pkt,,Packet Tracer case file: NET-001_VLAN_Configuration_Issue(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-002,VLAN,VLAN Assignment Issue,show vlan brief; show interfaces switchport; ping,Switchport is assigned to the wrong access VLAN,Layer 2,vlan-port-assignment,High,NET-002_VLAN_Assignment_Issue(1).pkt,,Packet Tracer case file: NET-002_VLAN_Assignment_Issue(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-003,VLAN,Trunk Configuration Issue,show interfaces trunk; show interfaces switchport; ping,Trunk configuration is incorrect,Layer 2,vlan-trunking,High,NET-003_VLAN_Trunk(2).pkt,,Packet Tracer case file: NET-003_VLAN_Trunk(2).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-004,VLAN,Missing VLAN,show vlan brief; ping,Required VLAN is missing,Layer 2,missing-vlan,High,NET-004_Missing_VLAN(2).pkt,,Packet Tracer case file: NET-004_Missing_VLAN(2).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-005,VLAN,Wrong Switchport Mode,show interfaces switchport; ping,Switchport mode is incorrect,Layer 2,switchport-mode,High,NET-005_Wrong_Switchport_mode(2).pkt,,Packet Tracer case file: NET-005_Wrong_Switchport_mode(2).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-006,Gateway,Wrong Default Gateway,ipconfig; show ip interface brief; show ip route; ping,PC0 has an incorrect default gateway,Layer 3,default-gateway,High,NET-006_Wrong_Default_Gateway(1).pkt,,Packet Tracer case file: NET-006_Wrong_Default_Gateway(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-007,Gateway,Missing Default Gateway,ipconfig; ping,PC0 default gateway is missing,Layer 3,default-gateway,High,NET-007_Missing_Default_Gateway(1).pkt,,Packet Tracer case file: NET-007_Missing_Default_Gateway(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-008,Gateway,Wrong Router LAN IP,show ip interface brief; ipconfig; ping,Router LAN interface has an incorrect IP address,Layer 3,router-lan-addressing,High,NET-008_Wrong_Router_LAN_IP(1).pkt,,Packet Tracer case file: NET-008_Wrong_Router_LAN_IP(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-009,DHCP,DHCP Pool Wrong Network,show ip dhcp pool; ipconfig /renew,DHCP pool network is incorrect,Layer 3,dhcp-pool,High,NET-009_DHCP_Wrong_Pool_Network(1).pkt,,Packet Tracer case file: NET-009_DHCP_Wrong_Pool_Network(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-010,DHCP,DHCP Excluded Address Mistake,show ip dhcp pool; ipconfig /renew,DHCP excluded-address range covers the client subnet,Layer 3,dhcp-address-allocation,High,NET-010_DHCP_Excluded_Address_Mistake(1).pkt,,Packet Tracer case file: NET-010_DHCP_Excluded_Address_Mistake(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-011,DHCP,DHCP Relay Missing,show running-config; ipconfig /renew,ip helper-address is missing on Router0 G0/0,Layer 3,dhcp-relay,High,NET-011_DHCP_Relay_Missing(1).pkt,,Packet Tracer case file: NET-011_DHCP_Relay_Missing(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-012,DHCP,Wrong DHCP Default Gateway,show ip dhcp pool; ipconfig; ping,DHCP pool default-router option is incorrect,Layer 3,dhcp-default-gateway,High,NET-012_Wrong_DHCP_Default_Gateway(1).pkt,,Packet Tracer case file: NET-012_Wrong_DHCP_Default_Gateway(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-013,DNS,Wrong DNS Server,ipconfig; ping test.local; nslookup test.local,PC0 DNS server is incorrectly configured,Layer 7,dns-configuration,Medium,NET-013_Wrong_DNS_Server(1).pkt,,Packet Tracer case file: NET-013_Wrong_DNS_Server(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-014,DNS,DNS Service Disabled,show running-config; nslookup test.local,DNS service is disabled,Layer 7,dns-service,Medium,NET-014_DNS_Service_Disabled(1).pkt,,Packet Tracer case file: NET-014_DNS_Service_Disabled(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-015,DNS,Missing DNS Record,nslookup test.local,Required DNS record is missing,Layer 7,dns-record,Medium,NET-015_Missing_DNS_Record(1).pkt,,Packet Tracer case file: NET-015_Missing_DNS_Record(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-016,Routing,Missing Static Route,show ip route; show running-config | include ip route,Static route to 192.168.40.0/24 is missing,Layer 3,routing,High,NET-016_Missing_Static_Route(1).pkt,,Packet Tracer case file: NET-016_Missing_Static_Route(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-017,Routing,Wrong Static Route Next Hop,show ip route; show running-config | include ip route,Static route next hop is incorrect,Layer 3,routing,High,NET-017_Wrong_Static_Route_Next_Hop(1).pkt,,Packet Tracer case file: NET-017_Wrong_Static_Route_Next_Hop(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-018,Routing,OSPF Network Statement Missing,show ip ospf neighbor; show ip route; show running-config | section router ospf,OSPF network statement for 192.168.40.0/24 is missing,Layer 3,OSPF,High,NET-018_OSPF_Network_Statement_Missing(1).pkt,,Packet Tracer case file: NET-018_OSPF_Network_Statement_Missing(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-019,Routing,Incorrect Subnet Mask on Routed Interface,show ip interface brief; show running-config interface g0/0,Router2 G0/0 has an incorrect subnet mask,Layer 3,routing-ip-addressing,High,NET-019 — Incorrect Subnet Mask on Routed Interface(1).pkt,,Packet Tracer case file: NET-019 — Incorrect Subnet Mask on Routed Interface(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-020,ACL,ACL Blocks Required Traffic,show access-lists; show running-config interface g0/0,Extended ACL denies traffic from 192.168.20.0/24 to 192.168.40.0/24,Layer 3/4,ACL,High,NET-020_ACL_Blocks_Required_Traffic(1).pkt,,Packet Tracer case file: NET-020_ACL_Blocks_Required_Traffic(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-021,ACL,ACL Wrong Interface/Direction,show access-lists; show running-config interface g0/0; show running-config interface g0/1,ACL is applied to the wrong interface or direction,Layer 3/4,ACL,High,NET-021_ACL_Wrong_Interface_Direction(1).pkt,,Packet Tracer case file: NET-021_ACL_Wrong_Interface_Direction(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-022,ACL,ACL Missing Permit Statement,show access-lists; show running-config | section access-list,Required permit statement is missing; implicit deny blocks traffic,Layer 3/4,ACL,High,NET-022_ACL_Missing_Permit_Statement(1).pkt,,Packet Tracer case file: NET-022_ACL_Missing_Permit_Statement(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-023,NAT,NAT Inside/Outside Reversed,show ip nat statistics; show running-config interface g0/0; show running-config interface g0/1,NAT inside/outside roles are reversed,Layer 3,NAT,High,NET-023_NAT_Inside_Outside_Reversed(1).pkt,,Packet Tracer case file: NET-023_NAT_Inside_Outside_Reversed(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-024,NAT,NAT ACL Wrong Inside Subnet,show ip nat translations; show access-lists; show running-config | include ip nat,NAT ACL does not match the actual inside subnet,Layer 3,NAT,High,NET-024_NAT_ACL_Wrong_Inside_Subnet(1).pkt,,Packet Tracer case file: NET-024_NAT_ACL_Wrong_Inside_Subnet(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-025,NAT,NAT Overload Missing,show ip nat translations; show running-config | include ip nat inside source,NAT overload rule is missing,Layer 3,NAT/PAT,High,NET-025_NAT_Overload_Missing(1).pkt,,Packet Tracer case file: NET-025_NAT_Overload_Missing(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-026,Wireless,Wrong Wireless SSID,AP wireless settings; client wireless profile,AP SSID does not match the client SSID,Layer 2,Wireless,Medium,NET-026_Wrong_Wireless_SSID(1).pkt,,Packet Tracer case file: NET-026_Wrong_Wireless_SSID(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-027,Wireless,Wrong WPA2 Password,AP wireless security settings; client wireless profile,WPA2-PSK credentials do not match,Layer 2,Wireless Security,Medium,NET-027_Wrong_WPA2_Password(1).pkt,,Packet Tracer case file: NET-027_Wrong_WPA2_Password(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-028,Wireless,AP Connected to Wrong VLAN,show vlan brief; show interfaces switchport,AP switchport is assigned to the wrong VLAN,Layer 2,Wireless VLAN,High,NET-028_AP_Connected_to_Wrong_VLAN(1).pkt,,Packet Tracer case file: NET-028_AP_Connected_to_Wrong_VLAN(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-029,Wireless,Wireless Interface Disabled,show interfaces status; wireless interface settings,Wireless interface is disabled,Layer 1/2,Wireless Interface,Medium,NET-029_Wireless_Interface_Disabled(1).pkt,,Packet Tracer case file: NET-029_Wireless_Interface_Disabled(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
-NET-030,Wireless,DHCP Unavailable for Wireless Clients,show ip dhcp pool; ipconfig /renew,Wireless DHCP pool/service is unavailable,Layer 3,Wireless DHCP,High,NET-030_DHCP_Unavailable_Wireless_Clients(1).pkt,,Packet Tracer case file: NET-030_DHCP_Unavailable_Wireless_Clients(1).pkt,PENDING_ACTUAL_CAPTURE,Run the listed commands in Packet Tracer and paste the real output verbatim. Do not invent output.
+NET-001,VLAN,VLAN Configuration Issue,show vlan brief; show interfaces switchport; ping,VLAN configuration is incorrect,Layer 2,vlan-configuration,High,NET-001_VLAN_Configuration_Issue(1).pkt,"Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   USERS                            active    Fa0/1
+20   VLAN0020                         active    Fa0/2
+1002 fddi-default                     active
+1003 token-ring-default               active
+1004 fddinet-default                  active
+1005 trnet-default                    active
+Switch#",proof/Screenshot 2026-09-04 032822.png,CAPTURED,Transcribed verbatim from screenshot. VLAN 20 is active but left with the default name VLAN0020 while VLAN 10 is named USERS; Fa0/2 sits in the unnamed VLAN0020. VLAN configuration incomplete/incorrect.
+NET-002,VLAN,VLAN Assignment Issue,show vlan brief; show interfaces switchport; ping,Switchport is assigned to the wrong access VLAN,Layer 2,vlan-port-assignment,High,NET-002_VLAN_Assignment_Issue(1).pkt,"%SYS-5-CONFIG_I: Configured from console by console
+Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   VLAN0010                         active    Fa0/1
+20   VLAN0020                         active    Fa0/2
+1002 fddi-default                     active
+1003 token-ring-default               active
+1004 fddinet-default                  active
+1005 trnet-default                    active
+Switch#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport access vlan 1
+Switch(config-if)#exit
+Switch(config)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/10, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Fa0/24, Gig0/1
+                                                Gig0/2
+10   VLAN0010                         active    Fa0/1
+20   VLAN0020                         active
+1002 fddi-default                     active
+1003 token-ring-default               active
+1004 fddinet-default                  active
+1005 trnet-default                    active
+Switch#",proof/Screenshot 2026-08-29 192514.png,CAPTURED,Transcribed verbatim from screenshot. PC port Fa0/2 is assigned to VLAN 1 (default) via 'switchport access vlan 1' while peer Fa0/1 is in VLAN0010; final show vlan brief shows Fa0/2 stranded in default VLAN and VLAN0020 empty.
+NET-003,VLAN,Trunk Configuration Issue,show interfaces trunk; show interfaces switchport; ping,Trunk configuration is incorrect,Layer 2,vlan-trunking,High,NET-003_VLAN_Trunk(2).pkt,"Switch(config-if)#end
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+Switch#show interfaces trunk
+
+Port      Mode             Encapsulation     Status        Native vlan
+Fa0/1     on               802.1q            trunking      1
+
+Port      Vlans allowed on trunk
+Fa0/1     1-1005
+
+Port      Vlans allowed and active in management domain
+Fa0/1     1,10
+
+Port      Vlans in spanning tree forwarding state and not pruned
+Fa0/1     none
+
+Switch#show interfaces fastEthernet 0/1 switchport
+Name: Fa0/1
+Switchport: Enabled
+Administrative Mode: trunk
+Operational Mode: trunk
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk private VLANs: none
+Operational private-vlan: none
+Trunking VLANs Enabled: All
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+Protected: false
+--More--",proof/Screenshot 2026-08-29 204035.png,CAPTURED,"Transcribed verbatim from screenshot. Fa0/1 trunk: allowed 1-1005 but only VLANs 1,10 allowed and active in management domain (VLAN 20 not active on the trunk) while ping failures occur in the same session. Output cut at --More-- as shown."
+NET-004,VLAN,Missing VLAN,show vlan brief; ping,Required VLAN is missing,Layer 2,missing-vlan,High,NET-004_Missing_VLAN(2).pkt,,Packet Tracer case file: NET-004_Missing_VLAN(2).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): every 'show vlan brief' screenshot in the proof set (192514, 202309, 200004, 032822, 025211) shows VLAN 10 present, so no screenshot evidences a missing required VLAN. Needed proof: show vlan brief output without the required VLAN row. Capture in Packet Tracer to activate."
+NET-005,VLAN,Wrong Switchport Mode,show interfaces switchport; ping,Switchport mode is incorrect,Layer 2,switchport-mode,High,NET-005_Wrong_Switchport_mode(2).pkt,"Switch#show interfaces fastEthernet 0/1 switchport
+Name: Fa0/1
+Switchport: Enabled
+Administrative Mode: dynamic auto
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: On
+Access Mode VLAN: 10 (USERS)
+Trunking Native Mode VLAN: 1 (default)
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Administrative private-vlan trunk native VLAN: none
+Administrative private-vlan trunk encapsulation: dot1q
+Administrative private-vlan trunk normal VLANs: none
+Administrative private-vlan trunk private VLANs: none
+Operational private-vlan: none
+Trunking VLANs Enabled: All
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+Protected: false
+--More--",proof/Screenshot 2026-09-03 200116.png,CAPTURED,Transcribed verbatim from screenshot. Administrative Mode is 'dynamic auto' instead of static access - switchport mode incorrect. Output cut at --More-- as shown.
+NET-006,Gateway,Wrong Default Gateway,ipconfig; show ip interface brief; show ip route; ping,PC0 has an incorrect default gateway,Layer 3,default-gateway,High,NET-006_Wrong_Default_Gateway(1).pkt,"C:\>ipconfig
+
+FastEthernet0:
+Connection: (default port)
+Connection-specific DNS Suffix. . :
+Link-local IPv6 Address . . . . . . : FE80::207:ECFF:EEC2:D907
+IPv6 Address. . . . . . . . . . . . :
+IPv4 Address. . . . . . . . . . . . : 192.168.10.10
+Subnet Mask . . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . . : 192.168.10.254
+Bluetooth Connection:
+Connection-specific DNS Suffix. . :
+IPv6 Address. . . . . . . . . . . . :
+IPv4 Address. . . . . . . . . . . . : 0.0.0.0
+Subnet Mask . . . . . . . . . . . . : 0.0.0.0
+Default Gateway . . . . . . . . . . : 0.0.0.0",proof/Screenshot 2026-09-03 194607.png,CAPTURED,Transcribed verbatim from screenshot. Default Gateway is 192.168.10.254 instead of 192.168.10.1 - matches expected fault exactly. Bluetooth adapter link-local line was not legible and is omitted.
+NET-007,Gateway,Missing Default Gateway,ipconfig; ping,PC0 default gateway is missing,Layer 3,default-gateway,High,NET-007_Missing_Default_Gateway(1).pkt,,Packet Tracer case file: NET-007_Missing_Default_Gateway(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): the only ipconfig screenshots of PC0 in the gateway lab (195722, 195811) show Default Gateway 192.168.10.1 configured, and 194607 shows the wrong-gateway state for NET-006 - none shows a blank/0.0.0.0 gateway. Needed proof: C:\>ipconfig with no Default Gateway value. Capture in Packet Tracer to activate."
+NET-008,Gateway,Wrong Router LAN IP,show ip interface brief; ipconfig; ping,Router LAN interface has an incorrect IP address,Layer 3,router-lan-addressing,High,NET-008_Wrong_Router_LAN_IP(1).pkt,,Packet Tracer case file: NET-008_Wrong_Router_LAN_IP(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): screenshots 203758 and 204809 show 'interface gigabitEthernet0/0 ip address 192.168.20.254 255.255.255.0' typed in configuration mode, but no 'show ip interface brief' screenshot displays G0/0 = 192.168.20.254, and no ipconfig of PC0 shows gateway 192.168.20.254. Needed proof: show ip interface brief with G0/0 = 192.168.20.254. Capture in Packet Tracer to activate."
+NET-009,DHCP,DHCP Pool Wrong Network,show ip dhcp pool; ipconfig /renew,DHCP pool network is incorrect,Layer 3,dhcp-pool,High,NET-009_DHCP_Wrong_Pool_Network(1).pkt,"Router#show ip dhcp pool
+
+Pool NET009 :
+
+Utilization mark (high/low)     : 100 / 0
+Subnet size (first/next)        : 0 / 0
+Total addresses                 : 254
+Leased addresses                : 0
+Excluded addresses              : 1
+Pending event                   : none
+
+1 subnet is currently in the pool
+
+Current index        IP address range                 Leased/Excluded/Total
+192.168.50.1         192.168.50.1 - 192.168.50.254        0     / 1     / 254
+
+Router#",proof/Screenshot 2026-09-03 205426.png,CAPTURED,Transcribed verbatim from screenshot (values verified by direct image read). Pool NET009 serves 192.168.50.1-192.168.50.254 while the client network is 192.168.40.0/24 - wrong pool network.
+NET-010,DHCP,DHCP Excluded Address Mistake,show ip dhcp pool; ipconfig /renew,DHCP excluded-address range covers the client subnet,Layer 3,dhcp-address-allocation,High,NET-010_DHCP_Excluded_Address_Mistake(1).pkt,"C:\>ipconfig /release
+
+IP Address. . . . . . . . . . . . :
+Subnet Mask . . . . . . . . . . . . :
+Default Gateway . . . . . . . . . . :
+DNS Server. . . . . . . . . . . . . :
+
+C:\>ipconfig /renew
+DHCP request failed.
+DHCP request failed.
+DHCP request failed.
+
+C:\>ipconfig
+
+FastEthernet0:
+Connection: (default port)
+IPv4 Address. . . . . . . . . . . . : 0.0.0.0
+Subnet Mask . . . . . . . . . . . . : 0.0.0.0
+Default Gateway . . . . . . . . . . : 0.0.0.0",proof/Screenshot 2026-09-03 211133.png,CAPTURED,"Transcribed verbatim from screenshot. ipconfig /renew output shows 'DHCP request failed.' in the excluded-address lab session (companion config screenshot 210750 shows 'ip dhcp excluded-address 192.168.40.1 192.168.40.254', not included in repo)."
+NET-011,DHCP,DHCP Relay Missing,show running-config; ipconfig /renew,ip helper-address is missing on Router0 G0/0,Layer 3,dhcp-relay,High,NET-011_DHCP_Relay_Missing(1).pkt,"C:\>ipconfig /release
+
+IP Address. . . . . . . . . . . . :
+Subnet Mask . . . . . . . . . . . . :
+Default Gateway . . . . . . . . . . :
+DNS Server. . . . . . . . . . . . . :
+
+C:\>ipconfig /renew
+DHCP request failed.
+
+C:\>ipconfig
+
+FastEthernet0:
+Connection: (default port)
+IPv4 Address. . . . . . . . . . . . : 192.168.20.11
+Subnet Mask . . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . . : 192.168.20.1
+DNS Server. . . . . . . . . . . . . : 8.8.8.8
+
+C:\>show running-config interface gigabitEthernet0/0
+Invalid Command.",proof/Screenshot 2026-09-03 214600.png,CAPTURED,"Transcribed verbatim from screenshot. ipconfig /renew shows 'DHCP request failed.' (fault state before ip helper-address was added); scrollback also holds extra failure lines and a later lease after the relay was configured, and a 'show running-config interface' attempt that PT rejects on the PC."
+NET-012,DHCP,Wrong DHCP Default Gateway,show ip dhcp pool; ipconfig; ping,DHCP pool default-router option is incorrect,Layer 3,dhcp-default-gateway,High,NET-012_Wrong_DHCP_Default_Gateway(1).pkt,"C:\>ipconfig /renew
+
+FastEthernet0:
+Connection: (default port)
+IPv4 Address. . . . . . . . . . . . : 192.168.20.11
+Subnet Mask . . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . . : 192.168.20.254
+DNS Server. . . . . . . . . . . . . : 8.8.8.8
+
+C:\>ping 192.168.40.10
+
+Pinging 192.168.40.10 with 32 bytes of data:
+
+Request timed out.
+Request timed out.
+Request timed out.
+Request timed out.
+
+Ping statistics for 192.168.40.10:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss),",proof/Screenshot 2026-09-03 221306.png,CAPTURED,Transcribed verbatim from screenshot. DHCP-assigned Default Gateway is 192.168.20.254 (expected 192.168.20.1) and ping 192.168.40.10 fails with 100% loss - matches expected fault.
+NET-013,DNS,Wrong DNS Server,ipconfig; ping test.local; nslookup test.local,PC0 DNS server is incorrectly configured,Layer 7,dns-configuration,Medium,NET-013_Wrong_DNS_Server(1).pkt,"C:\>ipconfig /release
+
+IP Address. . . . . . . . . . . . :
+Subnet Mask . . . . . . . . . . . . :
+Default Gateway . . . . . . . . . . :
+DNS Server. . . . . . . . . . . . . :
+
+C:\>ipconfig /renew
+
+FastEthernet0:
+Connection: (default port)
+IPv4 Address. . . . . . . . . . . . : 192.168.20.11
+Subnet Mask . . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . . : 192.168.20.1
+DNS Server. . . . . . . . . . . . . : 8.8.8.8",proof/Screenshot 2026-09-03 220236.png,CAPTURED,Transcribed verbatim from screenshot. DNS Server is 8.8.8.8 instead of the local Server0 at 192.168.40.20 - wrong DNS server (fixed state with 192.168.40.20 appears in 222328).
+NET-014,DNS,DNS Service Disabled,show running-config; nslookup test.local,DNS service is disabled,Layer 7,dns-service,Medium,NET-014_DNS_Service_Disabled(1).pkt,,Packet Tracer case file: NET-014_DNS_Service_Disabled(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): no screenshot shows 'show running-config' or 'nslookup test.local' in the DNS lab; ping test.local failure screenshots (233723, 233958, 234524, 234650) show only the symptom and ping is not in this row's required_commands. Needed proof: nslookup test.local failing / DNS service status. Capture in Packet Tracer to activate."
+NET-015,DNS,Missing DNS Record,nslookup test.local,Required DNS record is missing,Layer 7,dns-record,Medium,NET-015_Missing_DNS_Record(1).pkt,,Packet Tracer case file: NET-015_Missing_DNS_Record(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): no 'nslookup test.local' screenshot exists; ping test.local failure screenshots (233723, 234650) are symptom-only and ping is not in this row's required_commands. Needed proof: nslookup test.local failing to resolve test.local. Capture in Packet Tracer to activate."
+NET-016,Routing,Missing Static Route,show ip route; show running-config | include ip route,Static route to 192.168.40.0/24 is missing,Layer 3,routing,High,NET-016_Missing_Static_Route(1).pkt,"Router#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP, D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area, N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2, E1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area, * - candidate default, U - per-user static route, o - ODR, P - periodic downloaded static route
+Gateway of last resort is not set
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.0.0.0/30 is directly connected, GigabitEthernet0/1
+L        10.0.0.1/32 is directly connected, GigabitEthernet0/1
+     192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.20.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.20.1/32 is directly connected, GigabitEthernet0/0
+S        192.168.30.0/24 [1/0] via 10.0.0.2
+Router#",proof/Screenshot 2026-09-04 004554.png,CAPTURED,Transcribed verbatim from screenshot. Router0 route table has no entry for 192.168.40.0/24 (only static shown is 192.168.30.0/24 via 10.0.0.2) - required static route missing. Companion ping 004635 shows 'Destination host unreachable' from 192.168.20.1.
+NET-017,Routing,Wrong Static Route Next Hop,show ip route; show running-config | include ip route,Static route next hop is incorrect,Layer 3,routing,High,NET-017_Wrong_Static_Route_Next_Hop(1).pkt,"Router#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP, D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area, N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2, E1 - OSPF external type 1, E2 - OSPF external type 2, i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area, * - candidate default, U - per-user static route, o - ODR, P - periodic downloaded static route
+Gateway of last resort is not set
+     10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.0.0.0/30 is directly connected, GigabitEthernet0/1
+L        10.0.0.1/32 is directly connected, GigabitEthernet0/1
+     192.168.20.0/24 is variably subnetted, 2 subnets, 2 masks
+C        192.168.20.0/24 is directly connected, GigabitEthernet0/0
+L        192.168.20.1/32 is directly connected, GigabitEthernet0/0
+S        192.168.30.0/24 [1/0] via 10.0.0.2
+S        192.168.40.0/24 [1/0] via 192.168.20.254
+Router#",proof/Screenshot 2026-09-04 000916.png,CAPTURED,"Transcribed verbatim from screenshot. Route to 192.168.40.0/24 uses next hop 192.168.20.254 (nonexistent host on the directly connected LAN) - wrong next hop, matches expected fault exactly."
+NET-018,Routing,OSPF Network Statement Missing,show ip ospf neighbor; show ip route; show running-config | section router ospf,OSPF network statement for 192.168.40.0/24 is missing,Layer 3,OSPF,High,NET-018_OSPF_Network_Statement_Missing(1).pkt,"Router#show running-config | section router ospf
+router ospf 1
+ log-adjacency-changes
+Router#",proof/Screenshot 2026-09-04 003411.png,CAPTURED,"Transcribed verbatim from screenshot (values verified by direct image read). router ospf 1 contains only log-adjacency-changes - no network statements, so 192.168.40.0/24 is not advertised."
+NET-019,Routing,Incorrect Subnet Mask on Routed Interface,show ip interface brief; show running-config interface g0/0,Router2 G0/0 has an incorrect subnet mask,Layer 3,routing-ip-addressing,High,NET-019 — Incorrect Subnet Mask on Routed Interface(1).pkt,,Packet Tracer case file: NET-019 — Incorrect Subnet Mask on Routed Interface(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): screenshots 005252/005517 show 'ip address 10.0.0.2 255.255.255.0' typed in config mode with OSPF adjacency DOWN messages, but 'show ip interface brief' (005633) does not display masks and no 'show running-config interface g0/0' screenshot exists. Needed proof: show running-config interface g0/0 showing 255.255.255.0 on the /30 transit. Capture in Packet Tracer to activate."
+NET-020,ACL,ACL Blocks Required Traffic,show access-lists; show running-config interface g0/0,Extended ACL denies traffic from 192.168.20.0/24 to 192.168.40.0/24,Layer 3/4,ACL,High,NET-020_ACL_Blocks_Required_Traffic(1).pkt,"Router#show access-lists
+Extended IP access list 100
+    10 deny 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255 (4 match(es))
+    20 permit ip any any
+Router#",proof/Screenshot 2026-09-04 011320.png,CAPTURED,Transcribed verbatim from screenshot. ACL 100 entry 10 denies 192.168.20.0/24 to 192.168.40.0/24 and has 4 match(es) - deny is actively blocking the required traffic.
+NET-021,ACL,ACL Wrong Interface/Direction,show access-lists; show running-config interface g0/0; show running-config interface g0/1,ACL is applied to the wrong interface or direction,Layer 3/4,ACL,High,NET-021_ACL_Wrong_Interface_Direction(1).pkt,"Router#show ip interface gigabitEthernet0/1
+GigabitEthernet0/1 is up, line protocol is up (connected)
+ Internet address is 10.0.0.1/30
+ Broadcast address is 255.255.255.255
+ Address determined by setup command
+ Helper address is not set
+ Directed broadcast forwarding is disabled
+ Outgoing access list is not set
+ Inbound access list is 101
+ Proxy ARP is enabled
+ Security level is default
+ Split horizon is enabled
+ ICMP redirects are always sent
+ ICMP unreachables are always sent
+ ICMP mask replies are never sent
+ IP fast switching is disabled
+ IP fast switching on the same interface is disabled
+ IP Flow switching is disabled
+ IP Fast switching turbo vector
+ IP multicast fast switching is disabled
+ IP multicast distributed fast switching is disabled
+ Router Discovery is disabled
+ IP output packet accounting is disabled
+ IP access violation accounting is disabled
+ TCP/IP header compression is disabled
+ RIP/IP header compression is disabled
+ Probe proxy name replies are disabled
+ Policy routing is disabled
+ Network address translation is disabled
+ BGP Policy Mapping is disabled
+ Input features: MCI Check
+ WCCP Redirect outbound is disabled
+ WCCP Redirect inbound is disabled
+ WCCP Redirect exclude is disabled
+Router#
+Router#show access-lists
+Extended IP access list 101
+    10 deny 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255 (5 match(es))
+    20 permit ip any any
+Router#",proof/Screenshot 2026-09-04 012007.png,CAPTURED,"Transcribed verbatim from screenshot. show ip interface gigabitEthernet0/1 shows 'Inbound access list is 101' on the transit interface while source traffic enters via G0/0, plus show access-lists output for ACL 101 - wrong interface/direction."
+NET-022,ACL,ACL Missing Permit Statement,show access-lists; show running-config | section access-list,Required permit statement is missing; implicit deny blocks traffic,Layer 3/4,ACL,High,NET-022_ACL_Missing_Permit_Statement(1).pkt,"Router#show access-lists
+Extended IP access list 102
+    10 deny 192.168.20.0 0.0.0.255 192.168.40.0 0.0.0.255 (4 match(es))
+Router#",proof/Screenshot 2026-09-04 012605.png,CAPTURED,Transcribed verbatim from screenshot. ACL 102 contains only the deny entry - no permit statement - so implicit deny blocks all other traffic; deny has 4 match(es).
+NET-023,NAT,NAT Inside/Outside Reversed,show ip nat statistics; show running-config interface g0/0; show running-config interface g0/1,NAT inside/outside roles are reversed,Layer 3,NAT,High,NET-023_NAT_Inside_Outside_Reversed(1).pkt,"Router#show ip nat statistics
+Total translations: 0 (0 static, 0 dynamic, 0 extended)
+Outside Interfaces: GigabitEthernet0/0
+Inside Interfaces: GigabitEthernet0/1
+Hits: 4  Misses: 34
+Expired translations: 8
+Dynamic mappings :
+Router#show ip nat translations
+Router#",proof/Screenshot 2026-09-04 014642.png,CAPTURED,Transcribed verbatim from screenshot. Outside = GigabitEthernet0/0 and Inside = GigabitEthernet0/1 - reversed (correct state in companion shot 015747 shows Outside Gi0/1 / Inside Gi0/0). Matches expected fault.
+NET-024,NAT,NAT ACL Wrong Inside Subnet,show ip nat translations; show access-lists; show running-config | include ip nat,NAT ACL does not match the actual inside subnet,Layer 3,NAT,High,NET-024_NAT_ACL_Wrong_Inside_Subnet(1).pkt,"Router#show access-lists
+Standard IP access list 1
+    10 permit 192.168.60.0 0.0.0.255
+Router#show ip nat statistics
+Total translations: 0 (0 static, 0 dynamic, 0 extended)
+Outside Interfaces: GigabitEthernet0/1
+Inside Interfaces: GigabitEthernet0/0
+Hits: 5  Misses: 46
+Expired translations: 12
+Dynamic mappings :
+Router#",proof/Screenshot 2026-09-04 015747.png,CAPTURED,Transcribed verbatim from screenshot. ACL permits 192.168.60.0/24 while the actual inside subnet is 192.168.50.0/24 (inside translations show 192.168.50.10 in companion shot 013554) - NAT ACL does not match inside subnet.
+NET-025,NAT,NAT Overload Missing,show ip nat translations; show running-config | include ip nat inside source,NAT overload rule is missing,Layer 3,NAT/PAT,High,NET-025_NAT_Overload_Missing(1).pkt,,Packet Tracer case file: NET-025_NAT_Overload_Missing(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): show ip nat translations screenshot 013554 shows four active port translations (192.168.50.10:129-132), i.e. overload working/post-fix state, and no 'show running-config | include ip nat inside source' screenshot exists to show the missing overload line. Needed proof: running-config without the 'ip nat inside source ... overload' statement plus empty/failed translations. Capture in Packet Tracer to activate."
+NET-026,Wireless,Wrong Wireless SSID,AP wireless settings; client wireless profile,AP SSID does not match the client SSID,Layer 2,Wireless,Medium,NET-026_Wrong_Wireless_SSID(1).pkt,"Access Point0  Config
+GLOBAL Settings
+INTERFACE:  Port 0 | Port 1   (Port 1 selected)
+Port 1
+  SSID: Default
+  4 GHz Channel: 6
+  Coverage Range (meters): 140.00",proof/Screenshot 2026-09-04 021601.png,CAPTURED,Transcribed verbatim from screenshot. AP Port 1 broadcasts SSID 'Default' while the client profile expects NETSAGE - SSID mismatch (authentication/PSK fields not legible in the screenshot).
+NET-027,Wireless,Wrong WPA2 Password,AP wireless security settings; client wireless profile,WPA2-PSK credentials do not match,Layer 2,Wireless Security,Medium,NET-027_Wrong_WPA2_Password(1).pkt,,Packet Tracer case file: NET-027_Wrong_WPA2_Password(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): AP panel screenshot 025808 shows SSID NETSAGE with PSK Pass Phrase 'NetSage123', which matches the client - the expected WrongPass123 credential state is not in any screenshot. Needed proof: AP Port 1 security panel showing PSK Pass Phrase WrongPass123 (client still NetSage123). Capture in Packet Tracer to activate."
+NET-028,Wireless,AP Connected to Wrong VLAN,show vlan brief; show interfaces switchport,AP switchport is assigned to the wrong VLAN,Layer 2,Wireless VLAN,High,NET-028_AP_Connected_to_Wrong_VLAN(1).pkt,"Switch#show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/2, Fa0/3, Fa0/4, Fa0/5
+                                                Fa0/6, Fa0/7, Fa0/8, Fa0/9
+                                                Fa0/10, Fa0/11, Fa0/12, Fa0/13
+                                                Fa0/14, Fa0/15, Fa0/16, Fa0/17
+                                                Fa0/18, Fa0/19, Fa0/20, Fa0/21
+                                                Fa0/22, Fa0/23, Fa0/24, Gig0/1
+                                                Gig0/2
+10   WIRELESS                         active    Fa0/24
+20   WRONG_VLAN                       active    Fa0/1
+1002 fddi-default                     active
+1003 token-ring-default               active
+1004 fddinet-default                  active
+1005 trnet-default                    active
+Switch#",proof/Screenshot 2026-09-04 025211.png,CAPTURED,Transcribed verbatim from screenshot. AP switchport Fa0/1 sits in VLAN 20 WRONG_VLAN while the intended wireless VLAN 10 (WIRELESS) only holds Fa0/24 (Router2) - AP connected to wrong VLAN.
+NET-029,Wireless,Wireless Interface Disabled,show interfaces status; wireless interface settings,Wireless interface is disabled,Layer 1/2,Wireless Interface,Medium,NET-029_Wireless_Interface_Disabled(1).pkt,,Packet Tracer case file: NET-029_Wireless_Interface_Disabled(1).pkt,PENDING_ACTUAL_CAPTURE,"Description (not captured output): AP panel 021601 shows the Port 1 settings but the Port Status on/off state is not legible, and no 'show interfaces status' screenshot exists. Needed proof: AP Port 1 panel with Port Status unchecked/OFF (or switch 'show interfaces status' showing the port down). Capture in Packet Tracer to activate."
+NET-030,Wireless,DHCP Unavailable for Wireless Clients,show ip dhcp pool; ipconfig /renew,Wireless DHCP pool/service is unavailable,Layer 3,Wireless DHCP,High,NET-030_DHCP_Unavailable_Wireless_Clients(1).pkt,"C:\>ipconfig /release
+
+IP Address. . . . . . . . . . . . :
+Subnet Mask . . . . . . . . . . . . :
+Default Gateway . . . . . . . . . . :
+DNS Server. . . . . . . . . . . . . :
+
+C:\>ipconfig /renew
+DHCP request failed.
+DHCP request failed.
+DHCP request failed.
+
+C:\>ipconfig
+
+Bluetooth Connection:
+IPv4 Address. . . . . . . . . . . . : 0.0.0.0
+Subnet Mask . . . . . . . . . . . . : 0.0.0.0
+Default Gateway . . . . . . . . . . : 0.0.0.0
+
+Wireless0:
+Connection: (default port)
+IPv4 Address. . . . . . . . . . . . : 0.0.0.0
+Subnet Mask . . . . . . . . . . . . : 0.0.0.0
+Default Gateway . . . . . . . . . . : 0.0.0.0
+
+C:\>ping 192.168.40.1
+
+Pinging 192.168.40.1 with 32 bytes of data:
+
+Request timed out.
+Request timed out.",proof/Screenshot 2026-09-04 031220.png,CAPTURED,Transcribed verbatim from screenshot. Wireless client ipconfig /renew returns 'DHCP request failed.' and Wireless0 stays at 0.0.0.0; ping to 192.168.40.1 times out - WIRELESS DHCP pool unavailable. Companion screenshot 030805 shows 'show ip dhcp pool' with the pool state.
