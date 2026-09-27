@@ -1,5 +1,11 @@
 # NetSage AI — Evidence-Based Network Troubleshooting
 
+> **Cisco Networking Academy — Project 2: Applied AI + Network Troubleshooting**
+>
+> **Internship project · NetSage AI**
+>
+> **Md Aayan** · Roll No. 23331A0740 · MVGR College of Engineering
+
 An AI-assisted troubleshooting workflow for Cisco Packet Tracer labs: a reported
 symptom plus real device evidence produces a structured, evidence-backed
 diagnosis — and a human always makes the final call.
