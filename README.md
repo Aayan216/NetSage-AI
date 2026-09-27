@@ -10,8 +10,7 @@ An AI-assisted troubleshooting workflow for Cisco Packet Tracer labs: a reported
 symptom plus real device evidence produces a structured, evidence-backed
 diagnosis — and a human always makes the final call.
 
-**Status:** 30-case dataset complete · AI diagnosis + human review complete ·
-21/30 cases hold real Packet Tracer evidence.
+**Status:** 30-case dataset complete · AI diagnosis + human review complete cases hold real Packet Tracer evidence.
 
 ## Workflow
 
