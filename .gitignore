@@ -1,0 +1,13 @@
+# Submission archive and source documents (kept outside the repo)
+*.zip
+AI_Problem Statement.pdf
+Md-Aayan-MVGR-College-of-Engineering-Networking.docx
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
