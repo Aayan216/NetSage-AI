@@ -7,6 +7,10 @@ Md-Aayan-MVGR-College-of-Engineering-Networking.docx
 __pycache__/
 *.py[cod]
 
+# Full local screenshot dump (only the images cited by evidence_capture.csv
+# live in NETSAGE_AI/proof/ and are committed)
+/PROOF/
+
 # OS / editor noise
 Thumbs.db
 Desktop.ini
