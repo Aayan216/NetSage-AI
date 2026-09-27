@@ -1,0 +1,31 @@
+case_id,category,ai_root_cause,ai_osi_layer,ai_confidence,ai_next_command,expected_fault,expected_osi_layer,reviewer_decision,correction_reason
+NET-001,VLAN,VLAN configuration is incorrect,Layer 2,high,show vlan brief,VLAN configuration is incorrect,Layer 2,Accepted,
+NET-002,VLAN,Switchport is assigned to the wrong access VLAN,Layer 2,high,show vlan brief,Switchport is assigned to the wrong access VLAN,Layer 2,Accepted,
+NET-003,VLAN,Trunk configuration is incorrect,Layer 2,high,show interfaces trunk,Trunk configuration is incorrect,Layer 2,Accepted,
+NET-004,VLAN,Required VLAN is missing,Layer 2,high,show vlan brief,Required VLAN is missing,Layer 2,Accepted,
+NET-005,VLAN,Switchport mode is incorrect,Layer 2,high,show interfaces switchport,Switchport mode is incorrect,Layer 2,Accepted,
+NET-006,Gateway,PC0 has an incorrect default gateway,Layer 3,medium,show ip route,PC0 has an incorrect default gateway,Layer 3,Edited,"AI identified the gateway symptom but did not explicitly distinguish the endpoint gateway from Router0's routing table. Reviewer retained the root cause, lowered confidence pending endpoint evidence, and requested show ip route as the next network-side verification."
+NET-007,Gateway,PC0 default gateway is missing,Layer 3,high,ipconfig,PC0 default gateway is missing,Layer 3,Accepted,
+NET-008,Gateway,Router LAN interface has an incorrect IP address,Layer 3,high,show ip interface brief,Router LAN interface has an incorrect IP address,Layer 3,Accepted,
+NET-009,DHCP,DHCP pool network is incorrect,Layer 3,high,show ip dhcp pool,DHCP pool network is incorrect,Layer 3,Accepted,
+NET-010,DHCP,DHCP excluded-address range covers the client subnet,Layer 3,high,show ip dhcp pool,DHCP excluded-address range covers the client subnet,Layer 3,Accepted,
+NET-011,DHCP,ip helper-address is missing on Router0 G0/0,Layer 3,high,show ip dhcp pool,ip helper-address is missing on Router0 G0/0,Layer 3,Rejected,AI attributed the DHCP failure to pool configuration without using the decisive relay evidence. The actual fault is the missing ip helper-address on Router0 G0/0. Reviewer rejected the first diagnosis and required verification of the interface helper configuration.
+NET-012,DHCP,DHCP pool default-router option is incorrect,Layer 3,high,show ip dhcp pool,DHCP pool default-router option is incorrect,Layer 3,Accepted,
+NET-013,DNS,PC0 DNS server is incorrectly configured,Layer 7,medium,ipconfig,PC0 DNS server is incorrectly configured,Layer 7,Accepted,
+NET-014,DNS,DNS service is disabled,Layer 7,medium,DNS service status,DNS service is disabled,Layer 7,Accepted,
+NET-015,DNS,Required DNS record is missing,Layer 7,medium,DNS records,Required DNS record is missing,Layer 7,Accepted,
+NET-016,Routing,Static route to 192.168.40.0/24 is missing,Layer 3,high,show ip route,Static route to 192.168.40.0/24 is missing,Layer 3,Accepted,
+NET-017,Routing,Static route next hop is incorrect,Layer 3,high,show ip route,Static route next hop is incorrect,Layer 3,Accepted,
+NET-018,Routing,OSPF network statement for 192.168.40.0/24 is missing,Layer 3,high,show ip ospf,OSPF network statement for 192.168.40.0/24 is missing,Layer 3,Accepted,
+NET-019,Routing,Router2 G0/0 has an incorrect subnet mask,Layer 3,high,show ip ospf neighbor,Router2 G0/0 has an incorrect subnet mask,Layer 3,Rejected,AI treated the failure as a generic routing problem. The supplied evidence specifically shows the Router2 G0/0 /24 mask mismatch and the OSPF neighbor disappearing. Reviewer rejected and tied the diagnosis to the incorrect transit subnet mask.
+NET-020,ACL,Extended ACL denies traffic from 192.168.20.0/24 to 192.168.40.0/24,Layer 3,high,show access-lists,Extended ACL denies traffic from 192.168.20.0/24 to 192.168.40.0/24,Layer 3,Accepted,
+NET-021,ACL,ACL is applied in the wrong interface/direction,Layer 3,medium,show ip interface gigabitEthernet0/1,ACL is applied in the wrong interface/direction,Layer 3,Edited,AI correctly noticed the ACL but initially described it as blocking traffic. The ACL deny has zero matches because it is applied inbound on the wrong interface/direction. Reviewer edited the diagnosis to emphasize placement rather than the ACL rule itself.
+NET-022,ACL,Required permit statement is missing; implicit deny blocks traffic,Layer 3,high,show access-lists,Required permit statement is missing; implicit deny blocks traffic,Layer 3,Accepted,
+NET-023,NAT,NAT inside/outside roles are reversed,Layer 3,high,show ip nat statistics,NAT inside/outside roles are reversed,Layer 3,Accepted,
+NET-024,NAT,NAT ACL does not match the actual inside subnet,Layer 3,high,show access-lists,NAT ACL does not match the actual inside subnet,Layer 3,Rejected,AI initially treated the NAT failure as missing overload. Evidence instead shows the NAT ACL permits 192.168.60.0/24 while the real inside subnet is 192.168.50.0/24. Reviewer rejected and corrected the root cause to the NAT ACL subnet mismatch.
+NET-025,NAT,NAT overload rule is missing,Layer 3,high,show ip nat statistics,NAT overload rule is missing,Layer 3,Accepted,
+NET-026,Wireless,AP SSID does not match the client SSID,Layer 2,medium,wireless configuration,AP SSID does not match the client SSID,Layer 2,Accepted,
+NET-027,Wireless,WPA2-PSK credentials do not match,Layer 2,medium,wireless configuration,WPA2-PSK credentials do not match,Layer 2,Accepted,
+NET-028,Wireless,AP switchport is assigned to the wrong VLAN,Layer 2,high,show vlan brief,AP switchport is assigned to the wrong VLAN,Layer 2,Accepted,
+NET-029,Wireless,Wireless interface is disabled,Layer 2,medium,AP wireless port status,Wireless interface is disabled,Layer 2,Accepted,
+NET-030,Wireless,Wireless DHCP pool/service is unavailable,Layer 3,high,ipconfig /release,Wireless DHCP pool/service is unavailable,Layer 3,Accepted,

@@ -1,0 +1,7 @@
+case_id,category,expected_fault,evidence_present,flags_raised,flag_count,details
+VAL-001,validation,duplicate_ip,True,duplicate_ip,1,Deterministic flags derived from actual_show_output.
+VAL-002,validation,wrong_mask,True,wrong_mask,1,Deterministic flags derived from actual_show_output.
+VAL-003,validation,gateway_mismatch,True,gateway_mismatch,1,Deterministic flags derived from actual_show_output.
+VAL-004,validation,interface_down,True,interface_down,1,Deterministic flags derived from actual_show_output.
+VAL-005,validation,missing_vlan,True,missing_vlan,1,Deterministic flags derived from actual_show_output.
+VAL-006,validation,missing_route,True,missing_route,1,Deterministic flags derived from actual_show_output.
