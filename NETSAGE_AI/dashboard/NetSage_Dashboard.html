@@ -1,0 +1,29 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>NetSage AI Dashboard</title>
+<style>
+body{font-family:Arial,sans-serif;margin:32px;line-height:1.4}
+.cards{display:flex;gap:14px;flex-wrap:wrap;margin:22px 0}
+.card{border:1px solid #ccc;border-radius:10px;padding:16px;min-width:145px}
+.card b{font-size:26px;display:block;margin-top:5px}
+table{border-collapse:collapse;min-width:340px}
+th,td{border:1px solid #ccc;padding:8px;text-align:left}
+.grid{display:flex;gap:60px;flex-wrap:wrap}
+.note{padding:12px;border-radius:8px;background:#f4f4f4}
+</style></head>
+<body>
+<h1>NetSage AI — Troubleshooting Dashboard</h1>
+<p class="note">30-case evaluation dashboard. Human review remains the final decision.</p>
+<div class="cards">
+<div class="card">Total Cases<b>30</b></div>
+<div class="card">Accepted<b>25</b></div>
+<div class="card">Edited<b>2</b></div>
+<div class="card">Rejected<b>3</b></div>
+<div class="card">AI/Human Agreement<b>83.3%</b></div>
+</div>
+<div class="grid">
+<div><h2>Cases by Category</h2><table>
+<tr><th>Category</th><th>Cases</th></tr><tr><td>ACL</td><td>3</td></tr><tr><td>DHCP</td><td>4</td></tr><tr><td>DNS</td><td>3</td></tr><tr><td>Gateway</td><td>3</td></tr><tr><td>NAT</td><td>3</td></tr><tr><td>Routing</td><td>4</td></tr><tr><td>VLAN</td><td>5</td></tr><tr><td>Wireless</td><td>5</td></tr></table></div>
+<div><h2>Human Review</h2><table>
+<tr><th>Decision</th><th>Cases</th></tr><tr><td>Accepted</td><td>25</td></tr><tr><td>Edited</td><td>2</td></tr><tr><td>Rejected</td><td>3</td></tr></table></div>
+</div>
+</body></html>
