@@ -1,0 +1,18 @@
+validation_id,pattern,synthetic_evidence,expected_flag
+VAL-001,duplicate_ip,"show ip interface brief
+%IP-4-DUPADDR: Duplicate address 192.168.10.10 on GigabitEthernet0/0
+PC0 192.168.10.10/24
+PC1 192.168.10.10/24",duplicate_ip
+VAL-002,wrong_mask,GigabitEthernet0/0 192.168.20.1 255.255.255.128,wrong_mask
+VAL-003,gateway_mismatch,"PC0 IPv4 Address: 192.168.10.10
+Default Gateway: 192.168.10.254
+GigabitEthernet0/0 192.168.10.1 YES manual up up",gateway_mismatch
+VAL-004,interface_down,GigabitEthernet0/0 192.168.10.1 YES manual administratively down down,interface_down
+VAL-005,missing_vlan,"show vlan brief
+10 Users active
+20 Servers active
+Expected VLAN 30 is absent",missing_vlan
+VAL-006,missing_route,"show ip route
+C 192.168.10.0/24 is directly connected
+Gateway of last resort is not set
+(no route to 192.168.40.0/24)",missing_route

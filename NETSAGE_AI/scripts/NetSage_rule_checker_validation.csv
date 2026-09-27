@@ -1,0 +1,7 @@
+case_id,description,actual_show_output,expected_flags
+TEST-001,Duplicate IP,"%IP-4-DUPADDR: Duplicate address 192.168.10.10 on GigabitEthernet0/0",duplicate_ip
+TEST-002,Wrong mask,"GigabitEthernet0/0  10.0.0.1  YES manual up up\n255.255.255.128",wrong_mask
+TEST-003,Gateway mismatch,"Default Gateway : 192.168.10.254\nGigabitEthernet0/0  192.168.10.1  YES manual up up",gateway_mismatch
+TEST-004,Interface down,"GigabitEthernet0/1  192.168.20.1  YES manual administratively down",interface_down
+TEST-005,Missing VLAN,"VLAN 30 is missing from switch configuration",missing_vlan
+TEST-006,Missing route,"Gateway of last resort is not set\n(no route to 192.168.40.0/24)",missing_route
