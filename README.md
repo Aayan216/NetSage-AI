@@ -112,3 +112,10 @@ auditable. The dashboard in `NETSAGE_AI/dashboard/` summarizes the same numbers.
 Human review is mandatory before any fix is applied. The reviewer can accept,
 edit, or reject an AI recommendation; corrections are retained in the
 responsible-AI log. The AI never applies or claims to apply a fix.
+
+---
+
+## Author
+
+**Mohammed Aayan**  
+B.Tech — Computer Science & Information Technology
